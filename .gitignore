@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.pyo
+*.pyd
+*.pyc
+.Python
+.env
+.venv/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Flask
+instance/
+*.db
+*.sqlite3
+
+# IDEs and editors
+.vscode/
+.idea/
+.cursor/
+
+# Logs and temp files
+*.log
+*.tmp
+*.bak
+*.swp
+
+# System
+.DS_Store
+Thumbs.db
+
+# Node (if frontend)
+node_modules/
+dist/
+.lmstify/
+.lmstudio/
+.lmstudio-cache/
+.lmstudio-cache-v2/
+.lmstudio-cache-v3/
+.lmstudio-cache-v4/
+.lmstudio-cache-v5/
+.lmstudio-cache-v6/
