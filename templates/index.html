@@ -2,24 +2,26 @@
 <html>
 <head>
     <title>Flask To-Do List</title>
-    <style>
-        body { font-family: Arial; margin: 2rem; }
-        .done { text-decoration: line-through; color: gray; }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <h1>My To-Do List</h1>
     <form method="POST" action="/add">
         <input name="content" placeholder="New Task" required>
-        <button type="submit">Add</button>
+        <input type="datetime-local" name="deadline" required>
+        <button type="submit">Add Task</button>
     </form>
 
     <ul>
         {% for task in tasks %}
             <li class="{{ 'done' if task.completed }}">
+                
                 {{ task.content }}
                 <a href="/complete/{{ task.id }}">[✔]</a>
                 <a href="/delete/{{ task.id }}">[🗑]</a>
+                {% if task.deadline_display %}
+                    Deadline: {{ task.deadline_display }}
+                {% endif %}
             </li>
         {% endfor %}
     </ul>
